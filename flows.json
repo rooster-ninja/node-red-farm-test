@@ -194,7 +194,7 @@
         "id": "75605d9ce065f1f0",
         "type": "mqtt-broker",
         "name": "DebServTest",
-        "broker": "192.168.1.52",
+        "broker": "192.168.1.53",
         "port": "1883",
         "clientid": "",
         "autoConnect": true,
@@ -399,6 +399,27 @@
         "icon": "lightbulb_outline",
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "715de0f3363a8ddd",
+        "type": "protobuf-file",
+        "protopath": "~/protobufs/meshtastic/mqtt.proto",
+        "watchFile": true,
+        "keepCase": false
+    },
+    {
+        "id": "9750f9d1326e54f2",
+        "type": "protobuf-file",
+        "protopath": "/home/dek/protobufs/meshtastic",
+        "watchFile": true,
+        "keepCase": false
+    },
+    {
+        "id": "2c4e40aff0f038dd",
+        "type": "protobuf-file",
+        "protopath": "/home/dek/protobufs/meshtastic/mqtt.proto",
+        "watchFile": true,
+        "keepCase": false
     },
     {
         "id": "7181889101c91b4f",
@@ -766,8 +787,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 90,
-        "y": 180,
+        "x": 110,
+        "y": 60,
         "wires": [
             [
                 "49f1d9810d2c8eb8",
@@ -935,7 +956,7 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 360,
+        "x": 260,
         "y": 660,
         "wires": [
             [
@@ -969,7 +990,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 650,
+        "x": 750,
         "y": 660,
         "wires": []
     },
@@ -1018,7 +1039,7 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 290,
+        "x": 230,
         "y": 740,
         "wires": []
     },
@@ -1227,7 +1248,7 @@
         "z": "551d6d5c0f435291",
         "name": "",
         "group": "f05b36ed81881315",
-        "order": 5,
+        "order": 2,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -1315,7 +1336,7 @@
         "id": "c195cb4c0d04a62b",
         "type": "ui_led",
         "z": "551d6d5c0f435291",
-        "order": 7,
+        "order": 1,
         "group": "f05b36ed81881315",
         "width": 0,
         "height": 0,
@@ -1375,17 +1396,41 @@
         "active": true,
         "tosidebar": true,
         "console": false,
-        "tostatus": false,
+        "tostatus": true,
         "complete": "payload",
         "targetType": "msg",
-        "statusVal": "",
+        "statusVal": "payload",
         "statusType": "auto",
-        "x": 620,
-        "y": 360,
+        "x": 520,
+        "y": 940,
         "wires": []
     },
     {
-        "id": "4eadaaf34d689276",
+        "id": "8c3c9cd543c8b28b",
+        "type": "http request",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "helloworld",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 590,
+        "y": 460,
+        "wires": [
+            [
+                "4e0de245ff9517e0"
+            ]
+        ]
+    },
+    {
+        "id": "c5c828bd9a2dd81c",
         "type": "inject",
         "z": "551d6d5c0f435291",
         "name": "",
@@ -1403,13 +1448,66 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "Hello World!",
+        "payload": "Hello world!",
         "payloadType": "str",
         "x": 430,
-        "y": 340,
+        "y": 420,
         "wires": [
             [
-                "dc2dc121eff2390e"
+                "8c3c9cd543c8b28b"
+            ]
+        ]
+    },
+    {
+        "id": "b6487438670e60b2",
+        "type": "mqtt in",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "topic": "test/2/json/LongFast/!f724a0bc",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "75605d9ce065f1f0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 940,
+        "wires": [
+            [
+                "dc2dc121eff2390e",
+                "c28c930d907d9a4e"
+            ]
+        ]
+    },
+    {
+        "id": "c4ad023a2f343454",
+        "type": "debug",
+        "z": "551d6d5c0f435291",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "c28c930d907d9a4e",
+        "type": "decode",
+        "z": "551d6d5c0f435291",
+        "name": "Meshtastic Message Decode",
+        "protofile": "2c4e40aff0f038dd",
+        "protoType": "",
+        "x": 540,
+        "y": 820,
+        "wires": [
+            [
+                "c4ad023a2f343454"
             ]
         ]
     }
