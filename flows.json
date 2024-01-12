@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "e8fa078bc43176ab",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "2d95955e5c118ac6",
         "type": "subflow",
         "name": "Coil 16Bit",
@@ -194,7 +202,7 @@
         "id": "75605d9ce065f1f0",
         "type": "mqtt-broker",
         "name": "DebServTest",
-        "broker": "192.168.1.53",
+        "broker": "192.168.1.54",
         "port": "1883",
         "clientid": "",
         "autoConnect": true,
@@ -220,20 +228,6 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
-    },
-    {
-        "id": "938522467524dfea",
-        "type": "websocket-listener",
-        "path": "",
-        "wholemsg": "false"
-    },
-    {
-        "id": "d63782679906f5b8",
-        "type": "ui_tab",
-        "name": "Mqtt",
-        "icon": "laptop",
-        "disabled": false,
-        "hidden": false
     },
     {
         "id": "66922acf5e59ccad",
@@ -334,6 +328,30 @@
         }
     },
     {
+        "id": "d63782679906f5b8",
+        "type": "ui_tab",
+        "name": "Mqtt",
+        "icon": "laptop",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6765277383f12298",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "home",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6dad2f03116fa732",
+        "type": "ui_tab",
+        "name": "Lights",
+        "icon": "lightbulb_outline",
+        "disabled": false,
+        "hidden": false
+    },
+    {
         "id": "f05b36ed81881315",
         "type": "ui_group",
         "name": "Yard Light",
@@ -383,43 +401,6 @@
         "parallelUnitIdsAllowed": true,
         "showWarnings": true,
         "showLogs": true
-    },
-    {
-        "id": "6765277383f12298",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "home",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "6dad2f03116fa732",
-        "type": "ui_tab",
-        "name": "Lights",
-        "icon": "lightbulb_outline",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "715de0f3363a8ddd",
-        "type": "protobuf-file",
-        "protopath": "~/protobufs/meshtastic/mqtt.proto",
-        "watchFile": true,
-        "keepCase": false
-    },
-    {
-        "id": "9750f9d1326e54f2",
-        "type": "protobuf-file",
-        "protopath": "/home/dek/protobufs/meshtastic",
-        "watchFile": true,
-        "keepCase": false
-    },
-    {
-        "id": "2c4e40aff0f038dd",
-        "type": "protobuf-file",
-        "protopath": "/home/dek/protobufs/meshtastic/mqtt.proto",
-        "watchFile": true,
-        "keepCase": false
     },
     {
         "id": "7181889101c91b4f",
@@ -995,282 +976,6 @@
         "wires": []
     },
     {
-        "id": "7abf316e2a66b8a5",
-        "type": "ui_button",
-        "z": "551d6d5c0f435291",
-        "name": "",
-        "group": "b9650e385683f2dc",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "button",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "Hello World!! Fart Wanker EXTREME",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 90,
-        "y": 740,
-        "wires": [
-            [
-                "3578340312ddb4d0"
-            ]
-        ]
-    },
-    {
-        "id": "3578340312ddb4d0",
-        "type": "ui_text",
-        "z": "551d6d5c0f435291",
-        "group": "b9650e385683f2dc",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "text",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 230,
-        "y": 740,
-        "wires": []
-    },
-    {
-        "id": "dd3876a27234e676",
-        "type": "ui_slider",
-        "z": "551d6d5c0f435291",
-        "name": "",
-        "label": "slider",
-        "tooltip": "",
-        "group": "b9650e385683f2dc",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "outs": "all",
-        "topic": "topic",
-        "topicType": "msg",
-        "min": 0,
-        "max": "100",
-        "step": 1,
-        "className": "",
-        "x": 90,
-        "y": 860,
-        "wires": [
-            [
-                "4b6757a98a160ac4"
-            ]
-        ]
-    },
-    {
-        "id": "4b6757a98a160ac4",
-        "type": "ui_gauge",
-        "z": "551d6d5c0f435291",
-        "name": "",
-        "group": "b9650e385683f2dc",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "gauge",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "100",
-        "colors": [
-            "#00b500",
-            "#e6e600",
-            "#ca3838"
-        ],
-        "seg1": "50",
-        "seg2": "75",
-        "diff": false,
-        "className": "",
-        "x": 250,
-        "y": 860,
-        "wires": []
-    },
-    {
-        "id": "4b1b636501fdcbfc",
-        "type": "ui_text_input",
-        "z": "551d6d5c0f435291",
-        "name": "",
-        "label": "MQTT",
-        "tooltip": "",
-        "group": "b9650e385683f2dc",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "mode": "text",
-        "delay": "0",
-        "topic": "topic",
-        "sendOnBlur": false,
-        "className": "",
-        "topicType": "msg",
-        "x": 370,
-        "y": 600,
-        "wires": [
-            [
-                "7798d9e11a94ded5"
-            ]
-        ]
-    },
-    {
-        "id": "bcb255233e202e2b",
-        "type": "ui_button",
-        "z": "551d6d5c0f435291",
-        "name": "",
-        "group": "b9650e385683f2dc",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "button",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 310,
-        "y": 540,
-        "wires": [
-            [
-                "4b1b636501fdcbfc"
-            ]
-        ]
-    },
-    {
-        "id": "0331a091494f004c",
-        "type": "ui_text",
-        "z": "551d6d5c0f435291",
-        "group": "b9650e385683f2dc",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "text",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#000000",
-        "x": 470,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "e6a781e18ae7b097",
-        "type": "modbus-server",
-        "z": "551d6d5c0f435291",
-        "name": "DebServ",
-        "logEnabled": false,
-        "hostname": "192.168.1.30",
-        "serverPort": 10502,
-        "responseDelay": 100,
-        "delayUnit": "ms",
-        "coilsBufferSize": 10000,
-        "holdingBufferSize": 10000,
-        "inputBufferSize": 10000,
-        "discreteBufferSize": 10000,
-        "showErrors": false,
-        "x": 80,
-        "y": 1080,
-        "wires": [
-            [],
-            [],
-            [],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "d7c36f8aef2ab2cf",
-        "type": "modbus-read",
-        "z": "551d6d5c0f435291",
-        "name": "",
-        "topic": "",
-        "showStatusActivities": true,
-        "logIOActivities": false,
-        "showErrors": false,
-        "showWarnings": true,
-        "unitid": "",
-        "dataType": "Input",
-        "adr": "0",
-        "quantity": "16",
-        "rate": "500",
-        "rateUnit": "ms",
-        "delayOnStart": false,
-        "startDelayTime": "",
-        "server": "64382bd94c5a2335",
-        "useIOFile": false,
-        "ioFile": "",
-        "useIOForPayload": false,
-        "emptyMsgOnFail": false,
-        "x": 110,
-        "y": 1160,
-        "wires": [
-            [
-                "d1e2acff40f72651"
-            ],
-            [
-                "8dac6731f3a88ec9"
-            ]
-        ]
-    },
-    {
-        "id": "d1e2acff40f72651",
-        "type": "modbus-response",
-        "z": "551d6d5c0f435291",
-        "name": "",
-        "registerShowMax": 20,
-        "x": 290,
-        "y": 1060,
-        "wires": []
-    },
-    {
-        "id": "101b9fb2582c1f46",
-        "type": "ui_button",
-        "z": "551d6d5c0f435291",
-        "name": "",
-        "group": "f05b36ed81881315",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "Yard Light On/Off",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 110,
-        "y": 1380,
-        "wires": [
-            [
-                "e1e456698e509731"
-            ]
-        ]
-    },
-    {
         "id": "d92a7375190df76c",
         "type": "comment",
         "z": "551d6d5c0f435291",
@@ -1279,30 +984,6 @@
         "x": 90,
         "y": 1020,
         "wires": []
-    },
-    {
-        "id": "9e9c0ef8ed90d8c6",
-        "type": "modbus-write",
-        "z": "551d6d5c0f435291",
-        "name": "",
-        "showStatusActivities": true,
-        "showErrors": false,
-        "showWarnings": true,
-        "unitid": "",
-        "dataType": "Coil",
-        "adr": "4",
-        "quantity": "1",
-        "server": "64382bd94c5a2335",
-        "emptyMsgOnFail": false,
-        "keepMsgProperties": false,
-        "delayOnStart": false,
-        "startDelayTime": "",
-        "x": 520,
-        "y": 1380,
-        "wires": [
-            [],
-            []
-        ]
     },
     {
         "id": "8dac6731f3a88ec9",
@@ -1331,37 +1012,6 @@
             [],
             []
         ]
-    },
-    {
-        "id": "c195cb4c0d04a62b",
-        "type": "ui_led",
-        "z": "551d6d5c0f435291",
-        "order": 1,
-        "group": "f05b36ed81881315",
-        "width": 0,
-        "height": 0,
-        "label": "Yard Light",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#606060",
-                "value": "false",
-                "valueType": "bool"
-            },
-            {
-                "color": "#008000",
-                "value": "true",
-                "valueType": "bool"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": true,
-        "name": "YardLightStatus",
-        "x": 480,
-        "y": 1180,
-        "wires": []
     },
     {
         "id": "e1e456698e509731",
@@ -1393,7 +1043,7 @@
         "type": "debug",
         "z": "551d6d5c0f435291",
         "name": "debug 2",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": true,
@@ -1463,20 +1113,20 @@
         "type": "mqtt in",
         "z": "551d6d5c0f435291",
         "name": "",
-        "topic": "test/2/json/LongFast/!f724a0bc",
+        "topic": "LoRa_Farm/#",
         "qos": "2",
-        "datatype": "auto-detect",
+        "datatype": "json",
         "broker": "75605d9ce065f1f0",
         "nl": false,
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 230,
+        "x": 170,
         "y": 940,
         "wires": [
             [
                 "dc2dc121eff2390e",
-                "c28c930d907d9a4e"
+                "295c3ad74bfcaad0"
             ]
         ]
     },
@@ -1492,23 +1142,640 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 780,
-        "y": 820,
+        "x": 540,
+        "y": 880,
         "wires": []
     },
     {
-        "id": "c28c930d907d9a4e",
-        "type": "decode",
+        "id": "7abf316e2a66b8a5",
+        "type": "ui_button",
         "z": "551d6d5c0f435291",
-        "name": "Meshtastic Message Decode",
-        "protofile": "2c4e40aff0f038dd",
-        "protoType": "",
-        "x": 540,
-        "y": 820,
+        "name": "",
+        "group": "b9650e385683f2dc",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "Hello World!! Fart Wanker EXTREME",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 740,
+        "wires": [
+            [
+                "3578340312ddb4d0"
+            ]
+        ]
+    },
+    {
+        "id": "bcb255233e202e2b",
+        "type": "ui_button",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "group": "b9650e385683f2dc",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 310,
+        "y": 540,
+        "wires": [
+            [
+                "4b1b636501fdcbfc"
+            ]
+        ]
+    },
+    {
+        "id": "101b9fb2582c1f46",
+        "type": "ui_button",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "group": "f05b36ed81881315",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Yard Light On/Off",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 110,
+        "y": 1380,
+        "wires": [
+            [
+                "e1e456698e509731"
+            ]
+        ]
+    },
+    {
+        "id": "dd3876a27234e676",
+        "type": "ui_slider",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "label": "slider",
+        "tooltip": "",
+        "group": "b9650e385683f2dc",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 90,
+        "y": 860,
+        "wires": [
+            [
+                "4b6757a98a160ac4"
+            ]
+        ]
+    },
+    {
+        "id": "4b1b636501fdcbfc",
+        "type": "ui_text_input",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "label": "MQTT",
+        "tooltip": "",
+        "group": "b9650e385683f2dc",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": false,
+        "className": "",
+        "topicType": "msg",
+        "x": 370,
+        "y": 600,
+        "wires": [
+            [
+                "7798d9e11a94ded5"
+            ]
+        ]
+    },
+    {
+        "id": "4b6757a98a160ac4",
+        "type": "ui_gauge",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "group": "b9650e385683f2dc",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "50",
+        "seg2": "75",
+        "diff": false,
+        "className": "",
+        "x": 250,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "3578340312ddb4d0",
+        "type": "ui_text",
+        "z": "551d6d5c0f435291",
+        "group": "b9650e385683f2dc",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 230,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "0331a091494f004c",
+        "type": "ui_text",
+        "z": "551d6d5c0f435291",
+        "group": "b9650e385683f2dc",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 470,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "d1e2acff40f72651",
+        "type": "modbus-response",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "registerShowMax": 20,
+        "x": 290,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "d7c36f8aef2ab2cf",
+        "type": "modbus-read",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": true,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Input",
+        "adr": "0",
+        "quantity": "16",
+        "rate": "500",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "64382bd94c5a2335",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 110,
+        "y": 1160,
+        "wires": [
+            [
+                "d1e2acff40f72651"
+            ],
+            [
+                "8dac6731f3a88ec9"
+            ]
+        ]
+    },
+    {
+        "id": "9e9c0ef8ed90d8c6",
+        "type": "modbus-write",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "showStatusActivities": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "4",
+        "quantity": "1",
+        "server": "64382bd94c5a2335",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 520,
+        "y": 1380,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e6a781e18ae7b097",
+        "type": "modbus-server",
+        "z": "551d6d5c0f435291",
+        "name": "DebServ",
+        "logEnabled": false,
+        "hostname": "192.168.1.30",
+        "serverPort": 10502,
+        "responseDelay": 100,
+        "delayUnit": "ms",
+        "coilsBufferSize": 10000,
+        "holdingBufferSize": 10000,
+        "inputBufferSize": 10000,
+        "discreteBufferSize": 10000,
+        "showErrors": false,
+        "x": 80,
+        "y": 1080,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c195cb4c0d04a62b",
+        "type": "ui_led",
+        "z": "551d6d5c0f435291",
+        "order": 1,
+        "group": "f05b36ed81881315",
+        "width": 0,
+        "height": 0,
+        "label": "Yard Light",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#606060",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "YardLightStatus",
+        "x": 480,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "295c3ad74bfcaad0",
+        "type": "json",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 370,
+        "y": 900,
         "wires": [
             [
                 "c4ad023a2f343454"
             ]
         ]
+    },
+    {
+        "id": "a4c90dbd14ec30ee",
+        "type": "aedes broker",
+        "z": "551d6d5c0f435291",
+        "name": "DebServTest",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "persistence_bind": "memory",
+        "dburl": "",
+        "usetls": false,
+        "x": 450,
+        "y": 360,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7411536ba9aafceb",
+        "type": "inject",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"sender\":\"SENDER\",\"channel\":\"1\",\"payload\":{\"text\":\"test fart extreme\"},\"type\":\"text\"}",
+        "payloadType": "json",
+        "x": 410,
+        "y": 780,
+        "wires": [
+            [
+                "0eec142c4061dd30"
+            ]
+        ]
+    },
+    {
+        "id": "0eec142c4061dd30",
+        "type": "mqtt out",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "topic": "LoRa_Farm/2/json/MQTT_TEST/!f724a0bc",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "75605d9ce065f1f0",
+        "x": 710,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "a15d60ee17ab39ca",
+        "type": "comment",
+        "z": "e8fa078bc43176ab",
+        "name": "ModBus Water_PLC",
+        "info": "",
+        "x": 90,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "7a81667206daebee",
+        "type": "subflow:2d95955e5c118ac6",
+        "z": "e8fa078bc43176ab",
+        "name": "",
+        "x": 280,
+        "y": 220,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [
+                "e3bf54df11e53513"
+            ],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c5a0089a95bb091f",
+        "type": "trigger",
+        "z": "e8fa078bc43176ab",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 320,
+        "y": 380,
+        "wires": [
+            [
+                "2f8069331317420a"
+            ]
+        ]
+    },
+    {
+        "id": "3aa12970f3b59637",
+        "type": "ui_button",
+        "z": "e8fa078bc43176ab",
+        "name": "",
+        "group": "f05b36ed81881315",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Yard Light On/Off",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 110,
+        "y": 380,
+        "wires": [
+            [
+                "c5a0089a95bb091f"
+            ]
+        ]
+    },
+    {
+        "id": "ac97b5146f52ae63",
+        "type": "modbus-response",
+        "z": "e8fa078bc43176ab",
+        "name": "",
+        "registerShowMax": 20,
+        "x": 290,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "246e6ca23f943bf1",
+        "type": "modbus-read",
+        "z": "e8fa078bc43176ab",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": true,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Input",
+        "adr": "0",
+        "quantity": "16",
+        "rate": "500",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "64382bd94c5a2335",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "ac97b5146f52ae63"
+            ],
+            [
+                "7a81667206daebee"
+            ]
+        ]
+    },
+    {
+        "id": "2f8069331317420a",
+        "type": "modbus-write",
+        "z": "e8fa078bc43176ab",
+        "name": "",
+        "showStatusActivities": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "4",
+        "quantity": "1",
+        "server": "64382bd94c5a2335",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 520,
+        "y": 380,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "879b93893485ed1a",
+        "type": "modbus-server",
+        "z": "e8fa078bc43176ab",
+        "name": "DebServ",
+        "logEnabled": false,
+        "hostname": "192.168.1.30",
+        "serverPort": 10502,
+        "responseDelay": 100,
+        "delayUnit": "ms",
+        "coilsBufferSize": 10000,
+        "holdingBufferSize": 10000,
+        "inputBufferSize": 10000,
+        "discreteBufferSize": 10000,
+        "showErrors": false,
+        "x": 80,
+        "y": 80,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e3bf54df11e53513",
+        "type": "ui_led",
+        "z": "e8fa078bc43176ab",
+        "order": 1,
+        "group": "f05b36ed81881315",
+        "width": 0,
+        "height": 0,
+        "label": "Yard Light",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#606060",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "YardLightStatus",
+        "x": 480,
+        "y": 180,
+        "wires": []
     }
 ]
