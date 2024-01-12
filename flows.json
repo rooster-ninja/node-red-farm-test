@@ -1524,18 +1524,14 @@
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "3",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"sender\":\"SENDER\",\"channel\":\"1\",\"payload\":{\"text\":\"test fart extreme\"},\"type\":\"text\"}",
+        "payload": "{\"sender\":\"broker\",\"type\":\"sendtext\",\"channel\":\"1\",\"payload\":\"Yo Joe! Squared.\"}",
         "payloadType": "json",
         "x": 410,
         "y": 780,
@@ -1550,16 +1546,16 @@
         "type": "mqtt out",
         "z": "551d6d5c0f435291",
         "name": "",
-        "topic": "LoRa_Farm/2/json/MQTT_TEST/!f724a0bc",
+        "topic": "LoRa_Farm/2/json/MQTT_TEST",
         "qos": "",
-        "retain": "",
+        "retain": "false",
         "respTopic": "",
         "contentType": "",
         "userProps": "",
         "correl": "",
         "expiry": "",
         "broker": "75605d9ce065f1f0",
-        "x": 710,
+        "x": 670,
         "y": 780,
         "wires": []
     },
