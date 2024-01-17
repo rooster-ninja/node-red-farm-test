@@ -772,7 +772,6 @@
         "y": 60,
         "wires": [
             [
-                "49f1d9810d2c8eb8",
                 "dd3876a27234e676",
                 "0331a091494f004c"
             ]
@@ -783,7 +782,7 @@
         "type": "debug",
         "z": "551d6d5c0f435291",
         "name": "debug 1",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -791,8 +790,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 260,
-        "y": 180,
+        "x": 400,
+        "y": 620,
         "wires": []
     },
     {
@@ -809,8 +808,8 @@
         "correl": "",
         "expiry": "",
         "broker": "75605d9ce065f1f0",
-        "x": 270,
-        "y": 240,
+        "x": 570,
+        "y": 140,
         "wires": []
     },
     {
@@ -834,8 +833,8 @@
         "topic": "test",
         "payload": "Fart Wank",
         "payloadType": "str",
-        "x": 100,
-        "y": 240,
+        "x": 140,
+        "y": 140,
         "wires": [
             [
                 "7798d9e11a94ded5"
@@ -854,8 +853,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 190,
-        "y": 360,
+        "x": 330,
+        "y": 220,
         "wires": [
             [
                 "7798d9e11a94ded5"
@@ -884,7 +883,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 130,
-        "y": 420,
+        "y": 220,
         "wires": [
             [
                 "1951b8c348279b31"
@@ -900,8 +899,8 @@
             "93fb82548e2753a2"
         ],
         "uncaught": false,
-        "x": 510,
-        "y": 80,
+        "x": 130,
+        "y": 180,
         "wires": [
             [
                 "1e233cc45bd90f14"
@@ -920,8 +919,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
-        "y": 160,
+        "x": 340,
+        "y": 180,
         "wires": [
             [
                 "7798d9e11a94ded5"
@@ -937,8 +936,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 260,
-        "y": 660,
+        "x": 320,
+        "y": 360,
         "wires": [
             [
                 "0bc934b4d1ecdf12"
@@ -957,7 +956,7 @@
         "template": "<!DOCTYPE html>\n<html>\n\n<head>\n    <title>Hello</title>\n    ​\n    <h1>Hello World</h1>\n</head>\n\n<body>\n    ​\n    <p> This is a demo on how to create webpages and dashboards </p>\n</body>\n\n</html>",
         "output": "str",
         "x": 520,
-        "y": 660,
+        "y": 340,
         "wires": [
             [
                 "4e0de245ff9517e0"
@@ -971,8 +970,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 750,
-        "y": 660,
+        "x": 670,
+        "y": 320,
         "wires": []
     },
     {
@@ -1047,12 +1046,12 @@
         "tosidebar": true,
         "console": false,
         "tostatus": true,
-        "complete": "payload",
+        "complete": "object",
         "targetType": "msg",
         "statusVal": "payload",
         "statusType": "auto",
-        "x": 520,
-        "y": 940,
+        "x": 620,
+        "y": 720,
         "wires": []
     },
     {
@@ -1071,8 +1070,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 590,
-        "y": 460,
+        "x": 330,
+        "y": 320,
         "wires": [
             [
                 "4e0de245ff9517e0"
@@ -1100,8 +1099,8 @@
         "topic": "",
         "payload": "Hello world!",
         "payloadType": "str",
-        "x": 430,
-        "y": 420,
+        "x": 130,
+        "y": 320,
         "wires": [
             [
                 "8c3c9cd543c8b28b"
@@ -1113,38 +1112,21 @@
         "type": "mqtt in",
         "z": "551d6d5c0f435291",
         "name": "",
-        "topic": "LoRa_Farm/#",
+        "topic": "LoRa_Farm/2/json/MQTT_TEST/#",
         "qos": "2",
-        "datatype": "json",
+        "datatype": "auto-detect",
         "broker": "75605d9ce065f1f0",
         "nl": false,
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
-        "y": 940,
+        "x": 160,
+        "y": 820,
         "wires": [
             [
-                "dc2dc121eff2390e",
-                "295c3ad74bfcaad0"
+                "ae8313a806fa9c3d"
             ]
         ]
-    },
-    {
-        "id": "c4ad023a2f343454",
-        "type": "debug",
-        "z": "551d6d5c0f435291",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 540,
-        "y": 880,
-        "wires": []
     },
     {
         "id": "7abf316e2a66b8a5",
@@ -1167,7 +1149,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 90,
-        "y": 740,
+        "y": 500,
         "wires": [
             [
                 "3578340312ddb4d0"
@@ -1194,8 +1176,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 310,
-        "y": 540,
+        "x": 130,
+        "y": 260,
         "wires": [
             [
                 "4b1b636501fdcbfc"
@@ -1249,11 +1231,12 @@
         "max": "100",
         "step": 1,
         "className": "",
-        "x": 90,
-        "y": 860,
+        "x": 270,
+        "y": 40,
         "wires": [
             [
-                "4b6757a98a160ac4"
+                "4b6757a98a160ac4",
+                "cffd506531d2e564"
             ]
         ]
     },
@@ -1275,8 +1258,8 @@
         "sendOnBlur": false,
         "className": "",
         "topicType": "msg",
-        "x": 370,
-        "y": 600,
+        "x": 350,
+        "y": 260,
         "wires": [
             [
                 "7798d9e11a94ded5"
@@ -1307,8 +1290,8 @@
         "seg2": "75",
         "diff": false,
         "className": "",
-        "x": 250,
-        "y": 860,
+        "x": 410,
+        "y": 40,
         "wires": []
     },
     {
@@ -1329,7 +1312,7 @@
         "fontSize": 16,
         "color": "#000000",
         "x": 230,
-        "y": 740,
+        "y": 500,
         "wires": []
     },
     {
@@ -1349,8 +1332,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 470,
-        "y": 280,
+        "x": 270,
+        "y": 80,
         "wires": []
     },
     {
@@ -1478,22 +1461,6 @@
         "wires": []
     },
     {
-        "id": "295c3ad74bfcaad0",
-        "type": "json",
-        "z": "551d6d5c0f435291",
-        "name": "",
-        "property": "payload",
-        "action": "obj",
-        "pretty": false,
-        "x": 370,
-        "y": 900,
-        "wires": [
-            [
-                "c4ad023a2f343454"
-            ]
-        ]
-    },
-    {
         "id": "a4c90dbd14ec30ee",
         "type": "aedes broker",
         "z": "551d6d5c0f435291",
@@ -1509,36 +1476,11 @@
         "persistence_bind": "memory",
         "dburl": "",
         "usetls": false,
-        "x": 450,
-        "y": 360,
+        "x": 590,
+        "y": 60,
         "wires": [
             [],
             []
-        ]
-    },
-    {
-        "id": "7411536ba9aafceb",
-        "type": "inject",
-        "z": "551d6d5c0f435291",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "3",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"sender\":\"broker\",\"type\":\"sendtext\",\"channel\":\"1\",\"payload\":\"Yo Joe! Squared.\"}",
-        "payloadType": "json",
-        "x": 410,
-        "y": 780,
-        "wires": [
-            [
-                "0eec142c4061dd30"
-            ]
         ]
     },
     {
@@ -1555,8 +1497,377 @@
         "correl": "",
         "expiry": "",
         "broker": "75605d9ce065f1f0",
-        "x": 670,
+        "x": 750,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "53451297c47ada89",
+        "type": "function",
+        "z": "551d6d5c0f435291",
+        "name": "Build a packet Counter",
+        "func": "// initialise the counter to 0 if it doesn't exist already\nvar count = context.get('count') || 0;\ncount += 1;\n// store the value back\ncontext.set('count', count);\n// make it part of the outgoing msg object\nvar payload = msg.payload.payload;\n\nmsg.payload.payload = \"(10 min interval) Test MSG: \" + count;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nif (context.get(\"count\") === undefined) {\n    context.set(\"count\", 0)\n}",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 700,
+        "wires": [
+            [
+                "abbccc55955a70ec",
+                "dc2dc121eff2390e",
+                "0eec142c4061dd30"
+            ]
+        ]
+    },
+    {
+        "id": "abbccc55955a70ec",
+        "type": "json",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 650,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "33e4ec7b54b688b5",
+        "type": "inject",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "600",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"sender\":\"broker\",\"type\":\"sendtext\",\"channel\":\"1\",\"payload\":\"Yo Joe! Well Look what the cat drug in.\"}",
+        "payloadType": "json",
+        "x": 110,
+        "y": 640,
+        "wires": [
+            [
+                "49f1d9810d2c8eb8",
+                "53451297c47ada89"
+            ]
+        ]
+    },
+    {
+        "id": "c7e68770a1ea9951",
+        "type": "mqtt in",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "topic": "LoRa_Farm/2/json/MQTT_TEST",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "75605d9ce065f1f0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 440,
+        "wires": [
+            [
+                "8d29ebcf5500a58a"
+            ]
+        ]
+    },
+    {
+        "id": "8d29ebcf5500a58a",
+        "type": "debug",
+        "z": "551d6d5c0f435291",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "bcae8d73f5b03172",
+        "type": "debug",
+        "z": "551d6d5c0f435291",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "ab1b2f163fb7fdef",
+        "type": "ui_text",
+        "z": "551d6d5c0f435291",
+        "group": "b9650e385683f2dc",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Lora MSG:",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 550,
         "y": 780,
+        "wires": []
+    },
+    {
+        "id": "ae8313a806fa9c3d",
+        "type": "function",
+        "z": "551d6d5c0f435291",
+        "name": "function 2",
+        "func": "var payload = msg.payload.payload.text;\n\nmsg.payload = payload;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 780,
+        "wires": [
+            [
+                "ab1b2f163fb7fdef"
+            ]
+        ]
+    },
+    {
+        "id": "868dd0226500456a",
+        "type": "http request",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/3.0/onecall?lat=50.350&lon=-113.769&exclude=minutely,hourly,daily,alerts&units=metric&appid=9f57a2fcc725db67d5c52adffda0538b",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 250,
+        "y": 920,
+        "wires": [
+            [
+                "3e3dca8dc939d3b4"
+            ]
+        ]
+    },
+    {
+        "id": "5a586942a5d25628",
+        "type": "inject",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 920,
+        "wires": [
+            [
+                "868dd0226500456a"
+            ]
+        ]
+    },
+    {
+        "id": "cffd506531d2e564",
+        "type": "debug",
+        "z": "551d6d5c0f435291",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "3e3dca8dc939d3b4",
+        "type": "json",
+        "z": "551d6d5c0f435291",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 410,
+        "y": 920,
+        "wires": [
+            [
+                "344a54c514b87812",
+                "79a47226b3e968dd",
+                "dee8d48dd2cd67e0",
+                "0fb4ca349cf0cb85"
+            ]
+        ]
+    },
+    {
+        "id": "344a54c514b87812",
+        "type": "function",
+        "z": "551d6d5c0f435291",
+        "name": "Temperature",
+        "func": "// filter out current temperature \nmsg.payload = msg.payload.current.temp;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 860,
+        "wires": [
+            [
+                "afab326a3b438866"
+            ]
+        ]
+    },
+    {
+        "id": "afab326a3b438866",
+        "type": "ui_gauge",
+        "z": "551d6d5c0f435291",
+        "name": "Current Temp",
+        "group": "b9650e385683f2dc",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Current Temp",
+        "label": "Celsius",
+        "format": "{{value}}",
+        "min": "-50",
+        "max": "50",
+        "colors": [
+            "#0300b3",
+            "#00e61b",
+            "#ca3838"
+        ],
+        "seg1": "-5",
+        "seg2": "+27",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "dee8d48dd2cd67e0",
+        "type": "debug",
+        "z": "551d6d5c0f435291",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "79a47226b3e968dd",
+        "type": "function",
+        "z": "551d6d5c0f435291",
+        "name": "Trigger on temperature set point (-5C)",
+        "func": "// filter out current temperature \nvar temp = msg.payload.current.temp;\n\nif (temp < -5){msg.payload = true}\nelse {msg.payload = false};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 1040,
+        "wires": [
+            [
+                "bcae8d73f5b03172"
+            ]
+        ]
+    },
+    {
+        "id": "0fb4ca349cf0cb85",
+        "type": "function",
+        "z": "551d6d5c0f435291",
+        "name": "Weather Description",
+        "func": "// filter out current temperature \nmsg.payload = msg.payload.current.weather[0].description;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 960,
+        "wires": [
+            [
+                "8a9b298fb6d15d4c"
+            ]
+        ]
+    },
+    {
+        "id": "8a9b298fb6d15d4c",
+        "type": "ui_text",
+        "z": "551d6d5c0f435291",
+        "group": "b9650e385683f2dc",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Weather",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 820,
+        "y": 960,
         "wires": []
     },
     {
